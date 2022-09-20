@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GridLayout1.MainPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid ColumnSpacing="0" RowSpacing="0">
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="AUTO"></RowDefinition>
+                    <RowDefinition Height="AUTO"></RowDefinition>
+                    <RowDefinition Height="AUTO"></RowDefinition>
+                    <RowDefinition Height="AUTO"></RowDefinition>
+                    <RowDefinition Height="AUTO"></RowDefinition>
+
+                </Grid.RowDefinitions>
+
+                <Image Source="HeaderBackground.png" Aspect="AspectFill" ></Image>
+                <Image Aspect="Fill" Margin="0,-1,0,-1" VerticalOptions="End" Source="CurvedMask.png"></Image>
+
+                <Image Source="ProfilePic.png" HeightRequest="100" WidthRequest="100"
+                       HorizontalOptions="Center" VerticalOptions="End" TranslationY="50"></Image>
+
+                <StackLayout  Grid.Row="1" HorizontalOptions="Center" Padding="0,50,0,0">
+                    <Label Text="Clementine" Style="{StaticResource ProfileNameLabelCustom}" ></Label>
+                </StackLayout>
+                
+            </Grid>
+            
+        </ScrollView>
+        
+    </ContentPage.Content>
+
+</ContentPage>

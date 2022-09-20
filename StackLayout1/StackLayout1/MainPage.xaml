@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StackLayout1.MainPage">
+
+    <ContentPage.Content>
+
+        <StackLayout Padding="0" Orientation="Vertical" Spacing="0" BackgroundColor="Maroon">
+
+            <BoxView Color="Gray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"
+                     HeightRequest="100"></BoxView>
+
+            <Button BackgroundColor="Red" CornerRadius="50" HeightRequest="90" WidthRequest="90"
+                    HorizontalOptions="Center" VerticalOptions="Start" TranslationY="-30"></Button>
+
+
+            <StackLayout HeightRequest="100" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Spacing="20">
+                <Label Text="User Name" FontSize="30" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"></Label>
+                <Label Text="Bio + Hashtag" FontSize="20" FontAttributes="Bold" TextColor="White" HorizontalOptions="Start"></Label>
+            </StackLayout>
+
+            <StackLayout BackgroundColor="White" HeightRequest="50" Padding="5" Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                         Spacing="50">
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10">
+                    <BoxView BackgroundColor="Black"></BoxView>
+                    <Label Text="Accent Color" FontAttributes="Bold"
+                           FontSize="15" Margin="0,10,0,0"></Label>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Spacing="10">
+                    <BoxView BackgroundColor="Yellow"></BoxView>
+                    <Label Text="Primary Color" FontAttributes="Bold"
+                           FontSize="15" Margin="0,10,0,0"></Label>
+
+                </StackLayout>
+
+            </StackLayout>
+
+            <StackLayout BackgroundColor="Gray" HeightRequest="1" Margin="0,15,0,0"></StackLayout>
+
+            <StackLayout Orientation="Vertical" Margin="5">
+                <Frame BorderColor="Black" CornerRadius="5" HasShadow="True" BackgroundColor="Transparent">
+
+                    <StackLayout Orientation="Vertical" BackgroundColor="Gray">
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Edad:"  FontSize="15" TextColor="White"
+                               VerticalOptions="Center" Visual="Default"></Label>
+                            <Entry Placeholder="Ingrese Edad"  TextColor="White" PlaceholderColor="White"
+                               HorizontalOptions="FillAndExpand" ></Entry>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Intereses:" FontSize="15" TextColor="White"
+                               VerticalOptions="Center"></Label>
+                            <Entry Placeholder="Ingresa que et gustaria aprender" TextColor="White" PlaceholderColor="White"
+                               HorizontalOptions="FillAndExpand" ></Entry>
+
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Acerca de Mi:"  FontSize="15" TextColor="White"
+                               VerticalOptions="Center"></Label>
+                            <Entry Placeholder="Cuentanos sobre ti" TextColor="White" PlaceholderColor="White"
+                               HorizontalOptions="FillAndExpand" ></Entry>
+                        </StackLayout>
+
+                    </StackLayout>
+                    
+                </Frame>
+                
+            </StackLayout>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>
