@@ -1,12 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SQLite1.Views.AddStudent">
+             x:Class="SQLite1.Views.AddStudent"
+             Title="Registro de Estudiantes">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Frame BorderColor="Black" CornerRadius="20" Margin="5">
+                <StackLayout Spacing="0">
+                    <Entry Placeholder="Ingresa tus nombres" x:Name="TxtNombres" Text="{Binding stdname}"></Entry>
+                    <Entry Placeholder="Ingresa tu curso" x:Name="TxtCurso" Text="{Binding stdcourse}"></Entry>
+                    <Entry Placeholder="Ingresa nivel de tu curso" x:Name="TxtNivel" Text="{Binding stdlevel}"></Entry>
+
+                    <StackLayout VerticalOptions="EndAndExpand">
+                        <Button Text="Registrar" CornerRadius="30" x:Name="BtnRegistrar" 
+                                Clicked="BtnRegistrar_Clicked">
+                            
+                        </Button>
+                    </StackLayout>
+
+                </StackLayout>
+                
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
