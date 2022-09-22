@@ -8,8 +8,6 @@ using Xamarin.Forms;
 
 using AppApiRest.Model;
 
-using Plugin.LocalNotifications;
-
 namespace AppApiRest
 {
     public partial class MainPage : ContentPage
@@ -25,21 +23,6 @@ namespace AppApiRest
         {
             base.OnAppearing();
 
-
-            CrossLocalNotifications.Current.Show("No olvidar", "Notificacion con delay",
-                0, DateTime.Now.AddSeconds(3));
-
-
-            Device.StartTimer( TimeSpan.FromSeconds(10), (Func<bool>)(() =>
-                {
-
-                    CrossLocalNotifications.Current.Show("No olvidar", "Notificacion con  Device Starter" 
-                        + DateTime.Now.ToLongTimeString());
-
-                    return true;
-                }));
-
-                
 
             CargarRegistrados();
 
@@ -66,7 +49,7 @@ namespace AppApiRest
 
         private void BtnNotif_Clicked(object sender, EventArgs e)
         {
-            CrossLocalNotifications.Current.Show("Titulo de la notificacion", "Cuerpo del mensaje de la notificacion");
+            
         }
     }
 }

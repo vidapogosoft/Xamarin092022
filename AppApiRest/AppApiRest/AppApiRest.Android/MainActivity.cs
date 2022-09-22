@@ -5,8 +5,6 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 
-using Plugin.LocalNotifications;
-
 namespace AppApiRest.Droid
 {
     [Activity(Label = "AppApiRest", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
@@ -16,9 +14,6 @@ namespace AppApiRest.Droid
         {
             base.OnCreate(savedInstanceState);
 
-
-            //Inicializo el plugin de notificaciones
-            LocalNotificationsImplementation.NotificationIconId = Resource.Mipmap.icon_round;
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

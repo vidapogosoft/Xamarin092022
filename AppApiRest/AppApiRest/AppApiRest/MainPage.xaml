@@ -40,7 +40,7 @@
                                 <StackLayout VerticalOptions="Center">
 
                                     <Image Source="{Binding regRutaImagen}" 
-                                       HeightRequest="200" WidthRequest="200" Aspect="AspectFill">
+                                       HeightRequest="250" WidthRequest="250" Aspect="AspectFit">
                                     </Image>
 
                                     <Label FontAttributes="Bold" FontSize="15" HorizontalTextAlignment="Center"
