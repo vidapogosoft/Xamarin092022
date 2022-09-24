@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLite1.MainPage">
+
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Lista de Estudiantes Registrados" VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center" FontSize="18"></Label>
+
+            <ListView x:Name="StdList" ItemSelected="StdList_ItemSelected" Margin="5,0,0,0">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Spacing="2" Orientation="Vertical">
+                                <Label Text="{Binding stdname}" FontSize="15"></Label>
+                                <Label Text="{Binding stdcourse}" FontSize="12" FontAttributes="Bold"></Label>
+                            </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+                
+            </ListView>
+            
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
