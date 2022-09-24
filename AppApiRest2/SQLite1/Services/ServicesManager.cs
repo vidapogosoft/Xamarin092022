@@ -18,6 +18,11 @@ namespace SQLite1.Services
             restService = service;
         }
 
+        public Task<List<DTORegistrado>> GetApiRegistrados()
+        {
+            return restService.GetRegistrados();
+        }
+
         public async Task<int> SaveRegistro(DTORegistrado item, bool isNewItem)
         {
             int Grabado;

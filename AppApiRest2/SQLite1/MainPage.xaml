@@ -4,8 +4,9 @@
              x:Class="SQLite1.MainPage">
 
     <ScrollView>
-        <StackLayout>
-            <Label Text="Lista de Estudiantes Registrados" VerticalOptions="CenterAndExpand"
+        <StackLayout Spacing="0">
+
+            <Label Text="Lista de Estudiantes Registrados localmente"
                    HorizontalOptions="Center" FontSize="18"></Label>
 
             <ListView x:Name="StdList" ItemSelected="StdList_ItemSelected" Margin="5,0,0,0">
@@ -21,10 +22,9 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-                
-                
             </ListView>
-            
+
+           
         </StackLayout>
     </ScrollView>
 

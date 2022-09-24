@@ -16,12 +16,43 @@ namespace SQLite1.Rest
     public class RestService : IRestService
     {
         HttpClient _client;
+        public List<DTORegistrado> ListRegistrados { get; set; }
 
         public RestService()
         {
 
             _client = new HttpClient();
 
+        }
+
+        public async Task<List<DTORegistrado>> GetRegistrados()
+        {
+            ListRegistrados = new List<DTORegistrado>();
+
+            var uri = new Uri(string.Format(Constants.ApiUrl, "Registrados", string.Empty));
+
+            try
+            {
+
+                var response = await _client.GetAsync(uri);
+
+                if (response.IsSuccessStatusCode)
+                {
+
+                    var content = await response.Content.ReadAsStringAsync();
+
+                    ListRegistrados = JsonConvert.DeserializeObject<List<DTORegistrado>>(content);
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(@"Error {0}", ex.Message);
+            }
+
+            return ListRegistrados;
         }
 
         public async Task<int> SaveRegistro (DTORegistrado item, bool isNewItem)

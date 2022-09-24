@@ -15,9 +15,19 @@ namespace SQLite1.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddStudent : ContentPage
     {
+
+        public List<DTORegistrado> ListRegistrados;
+
         public AddStudent()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            CargarRegistrados();
+
         }
 
         private async void BtnRegistrar_Clicked(object sender, EventArgs e)
@@ -80,6 +90,20 @@ namespace SQLite1.Views
         {
             //Abro la navegacion
             await Navigation.PopAsync();
+
+        }
+
+        private async void CargarRegistrados()
+        {
+            ListRegistrados = new List<DTORegistrado>();
+
+
+            ListRegistrados = await App.Manager.GetApiRegistrados();
+
+            if (ListRegistrados.Count > 0)
+            {
+                CVRegistrados.ItemsSource = ListRegistrados;
+            }
 
         }
     }

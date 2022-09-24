@@ -8,11 +8,14 @@ using Xamarin.Forms;
 
 using SQLite1.Views;
 using SQLite1.Model;
+using SQLite1.DTO;
 
 namespace SQLite1
 {
     public partial class MainPage : ContentPage
     {
+
+
         public MainPage()
         {
             InitializeComponent();
@@ -34,10 +37,16 @@ namespace SQLite1
 
         }
         
-        protected async override void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
 
+            CargaLocal();
+
+        }
+
+        private async void CargaLocal()
+        {
             try
             {
                 StdList.ItemsSource = await App.dao.GetStudents();
@@ -47,9 +56,9 @@ namespace SQLite1
             {
                 await DisplayAlert("Cerrar", ex.Message, "Cerar");
             }
-
-            
         }
+
+       
 
         private async void StdList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
