@@ -20,7 +20,7 @@
 
         <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
             <Maps:Map x:Name="MiMapa" HeightRequest="700" WidthRequest="400"  
-                  MapType="Street"></Maps:Map>
+                  MapType="Satellite"></Maps:Map>
         </StackLayout>
         
 

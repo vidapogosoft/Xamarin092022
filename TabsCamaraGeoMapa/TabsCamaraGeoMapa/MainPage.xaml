@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Maps = "clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="TabsCamaraGeoMapa.MainPage">
+
+    <ContentPage Title="Camara" IconImageSource="camara.ico">
+        <ContentPage.Content>
+            <ScrollView>
+                <StackLayout>
+                    <Frame BorderColor="Black" CornerRadius="20" HasShadow="True">
+                        <StackLayout>
+                            <Image HeightRequest="150" WidthRequest="150" Source="icon.png" x:Name="MainImage"></Image>
+                            <Label TextColor="Blue" FontSize="14" x:Name="Path"></Label>
+                        </StackLayout>
+                    </Frame>
+
+
+                    <Frame BorderColor="Black" CornerRadius="20" HasShadow="True">
+                        <StackLayout>
+                            <Button Text="Tomar Foto" BackgroundColor="Navy" TextColor="White"
+                            x:Name="BtnTomaFoto" Clicked="BtnTomaFoto_Clicked"></Button>
+                            <Button Text="Subir Foto" BackgroundColor="OrangeRed" TextColor="White"
+                            x:Name="BtnSubeFoto" Clicked="BtnSubeFoto_Clicked"></Button>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="Mapa - Geolocalizacion" IconImageSource="mapa.ico">
+        <ContentPage.Content>
+            <StackLayout>
+
+                <Label Text="Latitud: " FontAttributes="Bold" FontSize="25"></Label>
+                <Label x:Name="Latitud" Text="{}" FontSize="25"></Label>
+                <Label Text="Longitud: " FontAttributes="Bold" FontSize="25"></Label>
+                <Label x:Name="Longitud" Text="{}" FontSize="25"></Label>
+                <Label Text="Altimetria: " FontAttributes="Bold" FontSize="25"></Label>
+                <Label x:Name="Altimetria" Text="{}" FontSize="25"></Label>
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                    <Maps:Map x:Name="MiMapa" HeightRequest="700" WidthRequest="700"  
+                  MapType="Satellite"></Maps:Map>
+                </StackLayout>
+                
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+</TabbedPage>
