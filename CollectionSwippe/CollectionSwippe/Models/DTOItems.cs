@@ -8,5 +8,6 @@ namespace CollectionSwippe.Models
         public string Item { get; set; }
         public string Pallet { get; set; }
         public string Cantidad { get; set; }
+        public string RutaFoto { get; set; }
     }
 }

@@ -13,6 +13,8 @@ namespace CollectionSwippe
     public partial class MainPage : ContentPage
     {
         public List<DTOItems> AllItems;
+        public List<DTOItems> AllPublicidades;
+        public int contadorPublcidades;
 
         public MainPage()
         {
@@ -26,6 +28,46 @@ namespace CollectionSwippe
             //Metodo de consulta y llena el collection
 
             CargarItems();
+            CargarCarrousel();
+
+        }
+
+        public void CargarCarrousel()
+        {
+            AllPublicidades = new List<DTOItems>();
+
+            AllPublicidades = new List<DTOItems>()
+            {
+                new DTOItems
+                {
+                    
+                    RutaFoto="https://admin-sysnnova.com/imagesemail/Beerman3.jpg"
+
+                },
+
+                new DTOItems
+                {
+                    
+                    RutaFoto="https://admin-sysnnova.com/imagesemail/Beerman2.jpg"
+
+                }
+
+               };
+
+            if(AllPublicidades.Count > 0)
+            {
+                contadorPublcidades = AllPublicidades.Count;
+
+                CarPublicidad.ItemsSource = AllPublicidades;
+
+                Device.StartTimer(TimeSpan.FromSeconds(5), (Func<bool>)(() =>
+                {
+                    CarPublicidad.Position = (CarPublicidad.Position + 1) % contadorPublcidades;
+                    return true;
+                }));
+
+
+            }
 
         }
 
