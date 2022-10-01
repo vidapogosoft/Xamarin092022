@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionSwippe.MainPage">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="5">
+
+                <CollectionView x:Name="CVItems" HeightRequest="800" SelectionMode="Single"
+                                SelectionChanged="CVItems_SelectionChanged">
+
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="5"/>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <SwipeView>
+
+                                <SwipeView.LeftItems>
+                                    <SwipeItems>
+                                        <SwipeItem Text="Agregar" Clicked="SwipeItem_Clicked"
+                                                   BackgroundColor="Navy"
+                                                   Invoked="SwipeItem_Invoked"></SwipeItem>
+                                        <SwipeItem Text="Detalles"
+                                                   BackgroundColor="Green"></SwipeItem>
+                                    </SwipeItems>
+                                </SwipeView.LeftItems>
+
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem x:Name="ArchivarItem"
+                                                    Text="Archivar"
+                                                   BackgroundColor="Red"
+                                                   Invoked="ArchivarItem_Invoked"></SwipeItem>
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+
+                                <Frame CornerRadius="0" Margin="1" BorderColor="Silver">
+                                <StackLayout Orientation="Vertical" Spacing="0">
+
+                                    <StackLayout HeightRequest="10" BackgroundColor="#FFF100" Margin="0,5,0,0" ></StackLayout>
+
+                                    <StackLayout Orientation="Horizontal" Spacing="8">
+                                        <Label HorizontalOptions="StartAndExpand" FontSize="14"
+                                                   Text="Frecuencia: " FontAttributes="Bold" />
+
+                                        <Label FontSize="14"
+                                                   Text="{Binding Frecuencia}" />
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal" Spacing="8">
+
+                                        <Label HorizontalOptions="StartAndExpand" FontSize="14"
+                                                   Text="Cod. Item: " FontAttributes="Bold" />
+
+                                        <Label FontSize="14"
+                                                   Text="{Binding CodItem}" />
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal" Spacing="8">
+
+                                        <Label HorizontalOptions="StartAndExpand" FontSize="14"
+                                                   Text="Item: " FontAttributes="Bold" />
+
+                                        <Label FontSize="14"
+                                                   Text="{Binding Item}" />
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal" Spacing="8">
+
+                                        <Label HorizontalOptions="StartAndExpand" FontSize="14"
+                                                   Text="Demanda Semanal Pallet: " FontAttributes="Bold" />
+
+                                        <Label FontSize="14"
+                                                   Text="{Binding Pallet}" />
+                                    </StackLayout>
+
+
+                                </StackLayout>
+                            </Frame>
+                            
+                           </SwipeView>
+                        </DataTemplate>    
+                    </CollectionView.ItemTemplate>
+                    
+                </CollectionView> 
+            
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
