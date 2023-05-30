@@ -6,6 +6,7 @@
              x:Class="MapaGeoLocal.MainPage">
 
     <StackLayout>
+
         <!-- Place new controls here -->
         <Label Text="Welcome to Xamarin.Forms!" 
            HorizontalOptions="Center"
@@ -20,7 +21,7 @@
 
         <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
             <Maps:Map x:Name="MiMapa" HeightRequest="700" WidthRequest="400"  
-                  MapType="Satellite"></Maps:Map>
+                  MapType="Street"></Maps:Map>
         </StackLayout>
         
 
